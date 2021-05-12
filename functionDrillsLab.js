@@ -210,25 +210,30 @@ console.log('Problem 11:', sample(sampleString));
 */
 
 //CODE HERE
-// function wizard (gold) {
-//   let chocFrogs = 0;
-//   if (chocFrogs % 3) {
-//     return chocFrogs;
-//   }
-// }
-// let totalFrogs = wizard(12);
-// console.log(totalFrogs);
-//divide by 3
-
 function wizard (gold) {
   let chocFrogs = 0;
-  for (let i = gold; i >= 3; i = i - 3) {
+  for (let i = gold; i >= 3; i -= 3) {
+    console.log(i);
     chocFrogs += 1
+    console.log('frogs:', chocFrogs);
   }
   return chocFrogs;
 }
 let totalFrogs = wizard(30);
 console.log(totalFrogs);
+
+
+//Alt way from Riley
+
+function frogBuyer(gold) {
+  return gold / 3
+}
+const totalFrogsOne = frogBuyer(12)
+console.log(totalFrogsOne)
+
+const totalFrogsTwo = frogBuyer(1000)
+console.log(totalFrogsTwo)
+
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -236,9 +241,27 @@ console.log(totalFrogs);
 */
 
 //CODE HERE
-//Math.floor
-//if statement (% 3 === 0)
-// else 
+function wholeFrogBuyerOne(gold) {
+  return Math.floor(gold / 3)
+}
+
+wholeFrogBuyerOne(16);
+
+
+//Alt. way 
+
+function wholeFrogBuyerTwo(gold) {
+  if (gold % 3 === 0) {
+    return gold / 3
+  } else if ((gold - 1) % 3 === 0) {
+    return (gold - 1) / 3
+  } else {
+    return (gold - 2) / 3
+  }
+}
+
+wholeFrogBuyerTwo(17);
+
 
 ////////////////// PROBLEM 14 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
